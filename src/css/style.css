@@ -16,10 +16,12 @@ body {
 }
 
 .container {
+  height: 100%;
   width: 1280px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 header {
@@ -28,13 +30,8 @@ header {
   background-color: #0284c7;
 }
 
-.container-header {
-  height: 100%;
-  width: 1280px;
-  margin: 0 auto;
-  display: flex;
+header > .container {
   justify-content: space-between;
-  align-items: center;
 }
 
 .logo {
@@ -64,6 +61,10 @@ header {
   color: #ffffff;
 }
 
+.touch-bar {
+  display: none;
+}
+
 .main-section {
   background-image: url(../images/background-mainsection.jpg);
   background-position: center;
@@ -76,15 +77,6 @@ header {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-.container-main {
-  height: 100%;
-  width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .main-text {
@@ -123,4 +115,54 @@ header {
 .main-text > button:hover {
   background-color: #0284c7;
   color: #ffffff;
+}
+
+@media screen and (max-width: 1320px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .container {
+    width: 576px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .navigation-ul {
+    display: none;
+  }
+
+  .touch-bar {
+    width: 30px;
+    height: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+  }
+
+  .main-text {
+    text-align: center;
+    width: 100%;
+    align-items: center;
+  }
 }
